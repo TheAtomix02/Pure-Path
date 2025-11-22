@@ -126,18 +126,20 @@ export const FAQS: FaqItem[] = [
     ],
     quote: { text: "Say: To Allah belongs all intercession.", cite: "Qur'an 39:44" }
   },
-  {
+    {
     id: 'hijab',
-    question: "Is the headscarf (Hijab) mandatory?",
-    answer: "The Qur'an commands women to cover their chests (31:24) and lengthen their garments (33:59) for modesty. It does not specifically command covering the hair or head. The focus is on modest conduct and dress to avoid harassment.",
+    question: "Is the headscarf (hijab) mandatory?",
+    answer: "The Qur’an explicitly commands covering the bosom (24:31) and lengthening garments (33:59), but does not explicitly command a headscarf. However, the headscarf is strongly recommended as a noble choice that aligns perfectly with Qur’anic values of modesty. It fulfills the purpose of modesty, protects dignity, strengthens spiritual identity, and serves as a daily act of devotion that inspires respect.",
     category: 'practice',
     difficulty: 'medium',
     highlights: [
-      { icon: 'eye', text: "Modesty is the goal" },
-      { icon: 'shirt', text: "Cover the chest (Juyub)" }
+      { icon: 'shield', text: "Protects dignity" },
+      { icon: 'heart', text: "Strengthens faith" },
+      { icon: 'star', text: "Noble & recommended" }
     ],
-    quote: { text: "Let them draw their veils over their bosoms.", cite: "Qur'an 24:31" }
+    quote: { text: "That is more suitable that they will be known and not abused.", cite: "Qur'an 33:59" }
   },
+
   {
     id: 'jesus',
     question: "Will Jesus return?",
