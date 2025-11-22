@@ -1,7 +1,7 @@
 {
-  "name": "copy-of-the-qur'an:-the-pure-path",
+  "name": "the-pure-path",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
