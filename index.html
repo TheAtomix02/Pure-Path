@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth antialiased">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>The Qur'an: The Pure Path - Elite Edition</title>
+    <meta name="description" content="An immersive, cinematic exploration of Qur'an-only Islam.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Cinzel:wght@400;500;600;700;800;900&family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              obsidian: {
+                950: '#020202', // True Black
+                900: '#080808',
+                800: '#121212',
+                700: '#1c1c1c',
+              },
+              champagne: {
+                50: '#fbf9f3',
+                100: '#f5f0e1',
+                200: '#ebe0c4',
+                300: '#dec798',
+                400: '#d1ac6b',
+                500: '#c59247', // Rich Gold
+                600: '#a87538',
+                700: '#86592d',
+              },
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              serif: ['Playfair Display', 'serif'],
+              cinzel: ['Cinzel', 'serif'], // Luxury headings
+              arabic: ['Amiri Quran', 'serif'],
+            },
+            backgroundImage: {
+              'luxury-gradient': 'linear-gradient(to bottom, #020202, #0a0a0a)',
+              'gold-gradient': 'linear-gradient(135deg, #d1ac6b 0%, #c59247 50%, #86592d 100%)',
+              'glass': 'linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.0) 100%)',
+            },
+            animation: {
+              'float': 'float 8s ease-in-out infinite',
+              'grain': 'grain 8s steps(10) infinite',
+              'rotate-slow': 'rotate 20s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              grain: {
+                '0%, 100%': { transform: 'translate(0, 0)' },
+                '10%': { transform: 'translate(-5%, -10%)' },
+                '20%': { transform: 'translate(-15%, 5%)' },
+                '30%': { transform: 'translate(7%, -25%)' },
+                '40%': { transform: 'translate(-5%, 25%)' },
+                '50%': { transform: 'translate(-15%, 10%)' },
+                '60%': { transform: 'translate(15%, 0%)' },
+                '70%': { transform: 'translate(0%, 15%)' },
+                '80%': { transform: 'translate(3%, 35%)' },
+                '90%': { transform: 'translate(-10%, 10%)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      /* Hide scrollbar for clean look but allow scrolling */
+      html { scrollbar-width: none; }
+      body::-webkit-scrollbar { display: none; }
+      
+      /* Film Grain Overlay */
+      .bg-noise {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        right: -50%;
+        bottom: -50%;
+        width: 200%;
+        height: 200vh;
+        background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+        background-repeat: repeat;
+        animation: grain 8s steps(10) infinite;
+        opacity: 0.03;
+        z-index: 9998;
+        pointer-events: none;
+      }
+
+      /* Custom Cursor Logic */
+      body { cursor: none; }
+      a, button, input { cursor: none; }
+      
+      ::selection {
+        background-color: #c59247;
+        color: #000;
+      }
+      
+      /* Utility for custom scrollbar inside elements */
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.05);
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: rgba(197, 146, 71, 0.5);
+        border-radius: 10px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+        background: rgba(197, 146, 71, 0.8);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-dom": "https://aistudiocdn.com/react-dom@^19.2.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-obsidian-950 text-white font-sans antialiased overflow-x-hidden">
+    <div class="bg-noise"></div>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
