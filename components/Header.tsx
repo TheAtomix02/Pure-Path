@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Search } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -20,12 +19,29 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // FIXED: These links now match the exact IDs in your App.tsx
   const navLinks = [
-    { name: "Qur'an Sufficient", href: "#sufficient" },
-    { name: "Contradictions", href: "#contradictions" },
+    { name: "Timeline", href: "#timeline" },
+    { name: "Principles", href: "#principles" },
+    { name: "Evidence", href: "#contradictions" }, // Renamed from "Contradictions" to fit mobile better
     { name: "FAQs", href: "#faq" },
-    { name: "Resources", href: "#resources" },
+    { name: "Library", href: "#resources" },
   ];
+
+  // FIXED: New function to handle smooth scrolling
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault(); // Stop the instant jump
+    setIsMobileMenuOpen(false); // Close the menu first
+
+    // Wait 300ms for the menu to close, then scroll smoothly
+    setTimeout(() => {
+      const targetId = href.replace('#', '');
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 300);
+  };
 
   return (
     <motion.header
@@ -126,7 +142,8 @@ const Header: React.FC<HeaderProps> = ({ onSearch }) => {
                   animate={{ x: 0, opacity: 1 }}
                   transition={{ delay: i * 0.1 }}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  // FIXED: Use the new handleNavClick function
+                  onClick={(e) => handleNavClick(e as any, link.href)}
                   className="block px-4 py-4 text-lg font-cinzel font-bold text-gray-300 hover:text-gold-400 hover:bg-white/5 rounded-lg border border-transparent hover:border-white/5 transition-all"
                 >
                   {link.name}
